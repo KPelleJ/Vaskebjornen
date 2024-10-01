@@ -1,0 +1,33 @@
+﻿@page
+@model BeboerlisteModel
+@{
+    ViewData["Title"] = "Liste over beboerne";
+}
+<h2>Residents</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Apartment Number</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Residents != null && Model.Residents.Count > 0)
+        {
+            foreach (var resident in Model.Residents)
+            {
+                <tr>
+                    <td>@resident.AppartmentNumber</td>
+                    <td>@resident.Name</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">No residents found.</td>
+            </tr>
+        }
+    </tbody>
+</table>

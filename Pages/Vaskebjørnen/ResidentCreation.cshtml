@@ -1,0 +1,29 @@
+﻿@page
+@model ResidentCreationModel
+@{
+}
+
+<form asp-page-handler="create" method="post" enctype="multipart/form-data">
+    <!-- This will display a validation summary, including any errors added in the ModelState -->
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.Res.AppartmentNumber" class="control-label">Lejligheds Nummer</label>
+        <input asp-for="@Model.Res.AppartmentNumber" type="text" class="form-control" />
+        <span asp-validation-for="@Model.Res.AppartmentNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label asp-for="@Model.Res.Name" class="control-label">Deres Navn</label>
+        <input asp-for="@Model.Res.Name" type="text" class="form-control" />
+        <span asp-validation-for="@Model.Res.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="@Model.Res.Password" class="control-label">Password</label>
+        <input asp-for="@Model.Res.Password" type="password" class="form-control" />
+        <span asp-validation-for="@Model.Res.Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Opret</button>
+</form>
